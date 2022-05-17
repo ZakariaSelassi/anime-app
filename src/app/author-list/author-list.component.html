@@ -1,0 +1,23 @@
+<h1> Authors list </h1>
+<div class="authorContainer">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope=""col>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr app-autor-item
+        *ngFor="let author of authors"
+        [author]="author"
+        (deleteAuthor)="deleteAuthor(author.idAuthor)"
+        (viewAuthor)="viewCurrent(author.idAuthor)"
+        (updateAuthor)="updateCurrent(author.idAuthor)"
+        ></tr>
+    </tbody>
+  </table>
+</div>
+

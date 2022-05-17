@@ -1,0 +1,12 @@
+
+<ng-container>
+  <th>{{author.idAuthor}}</th>
+  <td>{{author.firstName}}</td>
+  <td>{{author.lastName}}</td>
+  <td>
+    <button  (click)="handleUpdateAuthor(author.idAuthor)" class="btn btn-primary">Edit</button>
+    <button (click)="handleDeleteAuthor(author.idAuthor)" class="btn btn-danger">Delete</button>
+    <button (click)="handleAuthorById(author.idAuthor)" class="btn btn-primary">view</button>
+  </td>
+</ng-container>
+
