@@ -1,0 +1,13 @@
+<ng-container>
+  <th>{{anime.idAnimes}}</th>
+
+  <td>{{anime.animeName}}</td>
+  <td>{{anime.authorName ?  anime.authorName : ''}}</td>
+  <td>{{anime.categories}}</td>
+
+  <td>
+   <button  (click)="handleUpdateAnime(anime.idAnimes)" class="btn btn-primary">Edit</button>
+    <button (click)="handleDeleteAnime(anime.idAnimes)" class="btn btn-danger">Delete</button>
+    <button (click)="handleViewAnime(anime.idAnimes)" class="btn btn-primary">view</button>
+  </td>
+</ng-container>

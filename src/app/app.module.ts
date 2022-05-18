@@ -12,6 +12,11 @@ import { ButtonComponent } from './common/button/button.component';
 import { InputComponent } from './common/input/input.component';
 import { AuthorUpdateComponent } from './author-update/author-update.component';
 import { AuthorCreateComponent } from './author-create/author-create.component';
+import { AnimeListComponent } from './anime/anime-list/anime-list.component';
+import { AnimeDetailsComponent } from './anime/anime-details/anime-details.component';
+import { AnimeItemComponent } from './anime/anime-list/anime-item/anime-item.component';
+import { NavbarComponent } from './common/navbar/navbar.component';
+import { AnimeCreateComponent } from './anime/anime-create/anime-create.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +26,12 @@ import { AuthorCreateComponent } from './author-create/author-create.component';
     ButtonComponent,
     InputComponent,
     AuthorUpdateComponent,
-    AuthorCreateComponent
+    AuthorCreateComponent,
+    AnimeListComponent,
+    AnimeDetailsComponent,
+    AnimeItemComponent,
+    NavbarComponent,
+    AnimeCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +39,7 @@ import { AuthorCreateComponent } from './author-create/author-create.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+
 
   ],
   providers: [],

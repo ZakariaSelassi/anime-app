@@ -1,0 +1,27 @@
+
+<h1> Anime list </h1>
+<div class="authorContainer">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Anime</th>
+        <th scope="col">AuthorName</th>
+        <th scope="col">Categories</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr app-anime-item
+              *ngFor="let anime of animes"
+              [anime]="anime"
+              (deleteAnime)="deleteAnime(anime.idAnimes)"
+              (updateAnime)="updateAnime(anime.idAnimes)"
+              (viewAnime)="viewAnime(anime.idAnimes)">
+            </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-primary" (click)="sendToCreateAnime()">Add New Anime</button>
+</div>
+

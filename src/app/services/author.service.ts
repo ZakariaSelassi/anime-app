@@ -11,19 +11,13 @@ export class AuthorService {
 
   private apiUrl= environment.apiUrl;
   constructor(private http:HttpClient) { }
-  /* private httpOptions = {
-    headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-
-    // token for auth here
-    })
-}; */
   private httpOptions = {
-  headers: new HttpHeaders(
-  {
-     'Content-Type': 'application/json'
-  })
-}
+    headers: new HttpHeaders(
+    {
+       'Content-Type': 'application/json'
+    })
+  }
+
 
   createAuthor(author:Author):Observable<any>{
     console.log(author,"author");
