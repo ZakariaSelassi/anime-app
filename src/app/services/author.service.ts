@@ -18,7 +18,17 @@ export class AuthorService {
     // token for auth here
     })
 }; */
+  private httpOptions = {
+  headers: new HttpHeaders(
+  {
+     'Content-Type': 'application/json'
+  })
+}
 
+  createAuthor(author:Author):Observable<any>{
+    console.log(author,"author");
+    return this.http.post(`${this.apiUrl}/authors`,author,this.httpOptions);
+  }
   getAuthorList():Observable<Author[]>{
     return this.http.get<Author[]>(`${this.apiUrl}/authors`)
   }
@@ -26,7 +36,6 @@ export class AuthorService {
   getAuthorById(id:number):Observable<Author>{
     return this.http.get<Author>(`${this.apiUrl}/authors/${id}`)
   }
-
   updateAuthor(id:number,author:Author){
     return this.http.put(`${this.apiUrl}/authors/${id}`, author);
   }

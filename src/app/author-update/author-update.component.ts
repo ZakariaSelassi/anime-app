@@ -1,5 +1,5 @@
 import { AuthorService } from './../services/author.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Author } from '../model/author';
 
@@ -8,7 +8,7 @@ import { Author } from '../model/author';
   templateUrl: './author-update.component.html',
   styleUrls: ['./author-update.component.scss']
 })
-export class AuthorUpdateComponent implements OnInit {
+export class AuthorUpdateComponent implements OnInit,OnChanges {
 
   currentAuthor:Author = new Author(0,"","");
   currentAuhtorId!:number;
@@ -22,6 +22,9 @@ export class AuthorUpdateComponent implements OnInit {
         this.currentAuthor = data;
       })
     })
+  }
+  ngOnChanges(): void {
+    console.log(this.currentAuthor)
   }
   onSubmit(){
       this.authorService.updateAuthor(this.currentAuhtorId,this.currentAuthor).subscribe(data => {

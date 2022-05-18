@@ -40,6 +40,9 @@ export class AuthorListComponent implements OnInit {
     return this.router.navigate(['/author-update',idAuthor])
   }
 
+  sendToCreateAuthor(){
+    return this.router.navigate(['author-create']);
+  }
 
 
 }

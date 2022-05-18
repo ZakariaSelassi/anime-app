@@ -1,3 +1,4 @@
+import { AuthorCreateComponent } from './author-create/author-create.component';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { AuthorListComponent } from './author-list/author-list.component';
 import { NgModule } from '@angular/core';
@@ -8,7 +9,8 @@ const routes: Routes = [
   {path:'', pathMatch:'full', redirectTo:'author-list'},
   {path:'author-list', component:AuthorListComponent},
   {path:'author-details/:id',component:AuthorDetailsComponent},
-  {path:'author-update/:id',component:AuthorUpdateComponent}
+  {path:'author-update/:id',component:AuthorUpdateComponent},
+  {path:'author-create', component:AuthorCreateComponent}
 ];
 
 @NgModule({
