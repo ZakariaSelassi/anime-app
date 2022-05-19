@@ -4,8 +4,6 @@ import { Anime } from 'src/app/model/anime';
 import { Component, OnInit } from '@angular/core';
 import { AnimeService } from 'src/app/services/anime.service';
 import { Router } from '@angular/router';
-import { compileDeclareNgModuleFromMetadata } from '@angular/compiler';
-
 
 
 enum Category{
@@ -41,10 +39,10 @@ export class AnimeCreateComponent implements OnInit {
   ngOnInit(): void {
       this.convertEnumValueToPushToArray()
       this.getOptionsAuthor();
-      console.log(this.categoryKeys);
-  }
-
-
+    }
+  /**
+   * convertEnumValueToPushToArray : allow me to convert the enum value to string and push it to an array to display in the select
+   */
   convertEnumValueToPushToArray(){
     for(let cat in Category){
       // IsNan will return everything, which is not a number
@@ -57,23 +55,37 @@ export class AnimeCreateComponent implements OnInit {
   onSubmit(){
     this.addAuthor();
   }
-
+  /**
+   *
+   * @returns : allow me to add the author selected in the anime object, and send it to the database
+   */
   addAuthor(){
     this.anime.categories.push(this.selectCategory);
     return this.animeService.createAnime(this.authorId,this.anime).subscribe(async data => {
       this.sendToAnimeList();
     })
   }
+  /**
+   *
+   * @param id : allow me to get the id of the author selected,
+   */
   setAuthorId(id:number){
     console.log(id)
     this.authorId = id;
   }
+
+  /**
+   * getOptionsAuthor : allow me to get all authors from database and display them in the select
+   *
+   */
   getOptionsAuthor(){
     return this.authorService.getAuthorList().subscribe((response) => {
       console.log(response);
       this.authors = response;
     })
   }
+
+  /* SendToAnimeList : allow me to go at anime-list page after submiting  */
   sendToAnimeList(){
     this.router.navigate(['anime-list'])
   }

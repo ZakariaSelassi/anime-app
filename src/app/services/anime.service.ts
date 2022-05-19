@@ -20,10 +20,15 @@ export class AnimeService {
   getAnimeList():Observable<Anime[]>{
     return this.http.get<Anime[]>(`${this.apiUrl}/animes`)
   }
-
+  getAnimeById(id:number):Observable<Anime>{
+    return this.http.get<Anime>(`${this.apiUrl}/animes/${id}`,this.httpOptions)
+  }
   createAnime(idAuthor:number,anime:Anime):Observable<any>{
-    console.log(anime)
-    console.log(idAuthor)
+
     return this.http.post(`${this.apiUrl}/animes/${idAuthor}`,JSON.stringify(anime),this.httpOptions)
+  }
+
+  deleteAnime(id:number):Observable<any>{
+    return this.http.delete(`${this.apiUrl}/animes/${id}`, {responseType:'text'});
   }
 }

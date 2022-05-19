@@ -30,8 +30,11 @@ export class AnimeItemComponent implements OnInit {
 
   }
   handleDeleteAnime(id:number){
+    return this.deleteAnime.emit(id)
   }
 
-  handleViewAnime(id:number){}
+  handleViewAnime(id:number){
+    return this.viewAnime.emit(id)
+  }
 
 }

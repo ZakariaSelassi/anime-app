@@ -1,3 +1,4 @@
+import { AnimeDetailsComponent } from './anime/anime-details/anime-details.component';
 import { AnimeCreateComponent } from './anime/anime-create/anime-create.component';
 import { AuthorCreateComponent } from './author-create/author-create.component';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'author-update/:id',component:AuthorUpdateComponent},
   {path:'author-create', component:AuthorCreateComponent},
   {path:'anime-list', component:AnimeListComponent},
-  {path:'anime-create',component:AnimeCreateComponent}
+  {path:'anime-create',component:AnimeCreateComponent},
+  {path:'anime-details/:id', component:AnimeDetailsComponent}
 ];
 
 @NgModule({

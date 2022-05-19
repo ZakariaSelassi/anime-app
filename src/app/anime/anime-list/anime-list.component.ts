@@ -29,11 +29,18 @@ export class AnimeListComponent implements OnInit {
   }
   deleteAnime(id:number){
       // animes Service
+      return this.animeService.deleteAnime(id).subscribe((resp) => {
+          this.animes.filter(anime => anime.idAnimes !== id)
+          this.getAnimes();
+      },(error) => {
+        console.log(error)
+      });
   }
   updateAnime(id:number){
       // animes Service
   }
   viewAnime(id:number){
     // animes Service
+    this.router.navigate(['anime-details',id])
   }
 }
