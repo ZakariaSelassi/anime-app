@@ -23,8 +23,11 @@
   </div>
 
   <div class="form-group">
-    <label>Categories</label>
-    <input type="text" class="form-control" id="categories" placeholder="title" name="categories" [(ngModel)]="anime.categories">
+    <select name="form-control" name="categories" [(ngModel)]="selectCategory">
+      <option *ngFor="let cat of categoryKeys" [value]="cat">
+        {{cat}}
+      </option>
+    </select>
   </div>
 
   <button class="btn btn-success" type="submit"> create</button>
